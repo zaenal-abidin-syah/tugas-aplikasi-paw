@@ -1,11 +1,11 @@
 <?php 
 $title = 'Home';
+$style = 'css/style1.css';
 session_start(); 
-// $_SESSION['customer'] = true;
+include 'include/header.php';
+include 'include/nav_pengunjung.php';
 
 ?>
-
-<?php include 'include/header.php'; ?>
 
 <!-- isi -->
 <p>UTM Banking ada Suatu sistem aplikasi untuk universitas trunojoyo madura</p>

@@ -1,8 +1,10 @@
 <?php 
 session_start();
 $title = 'detail';
-include 'functions.php';
-include 'include/header.php';
+$style = '../css/style1.css';
+include '../functions.php';
+include '../include/header.php';
+include '../include/nav_admin.php';
 ?>
 
 <a href="add.php">Tambah data</a>
@@ -15,4 +17,4 @@ include 'include/header.php';
 <?php endforeach ?>
 </table>
 
-<?php include 'include/footer.php'; ?>
+<?php include '../include/footer.php'; ?>

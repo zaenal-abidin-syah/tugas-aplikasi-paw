@@ -1,11 +1,3 @@
-<?php 
-session_start();
-$title = 'browse';
-include 'functions.php';
-include 'include/header.php';
-?>
-<?php $data = tampilData('customer') ?>
-<a href="add.php">Tambah data</a>
 <table>
 	<tr>
 		<th>Username</th>
@@ -24,5 +16,3 @@ include 'include/header.php';
 	</tr>
 <?php endforeach ?>
 </table>
-
-<?php include 'include/footer.php'; ?>

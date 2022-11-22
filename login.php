@@ -3,32 +3,39 @@
 session_start();
 ob_start();
 $title = 'login';
+$style = 'css/style1.css';
 
 // include function
 include 'functions.php';
+
+if (!isset($_GET['loginAs']) AND !isset($_POST['login'])){
+	header("Location: index.php");
+	exit();
+}elseif(isset($_GET['loginAs'])) {
+	$loginAs = $_GET['loginAs'];
+}
 
 // ketika tombol login diklik maka lakukan validasi
 if (isset($_POST['login'])){
 	// validasi kosong, dll
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	$loginAs = $_POST['as'];
+	$loginAs = $_POST['loginAs'];
 	// check apakah sama dengan data yang ada di database
 	if(checkLogin($username, $password, $loginAs)){
 		$_SESSION[$loginAs] = true;
-		$sesi = $_SERVER['HTTP_HOST'];
-		header("Location: http://$sesi/tugas-aplikasi/index.php");
+		header("Location: $loginAs/index.php");
 		exit();
 	}
 }
+include 'include/header.php';
+include 'include/nav_pengunjung.php';
+
 ?>
-<?php include 'include/header.php' ?>
 
 	<h1>Ini adalah halaman login</h1>
 	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-		<h4>login sebagai</h4>
-		Admin<input type="radio" name="as" value="admin">
-		Customer<input type="radio" name="as" value="customer"><br><br>
+		<input type="hidden" name="loginAs" value="<?php echo $loginAs ?>"><br><br>
 		<label for="username">username</label>
 		<input type="text" name="username" id="username"><br><br>
 		<label for="password">password</label>

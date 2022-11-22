@@ -1,7 +1,8 @@
 <?php
 $title = 'daftar';
-// $data = '';
+
 include 'include/header.php';
+include 'include/nav_pengunjung.php';
 include 'include/form.php';
 include 'include/footer.php';
 ?>

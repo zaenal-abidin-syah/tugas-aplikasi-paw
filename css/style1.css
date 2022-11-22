@@ -24,7 +24,7 @@ h1{
 	flex: 2;
 }
 
-.profil, .daftar, .browse, .register, .logout{
+.nav-link{
 	flex: 1;
 }
 

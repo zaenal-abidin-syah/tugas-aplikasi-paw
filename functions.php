@@ -1,5 +1,5 @@
 <?php 
-$dbc = new PDO('mysql:host=localhost;dbname=banking', 'root', '');
+$dbc = new PDO('mysql:host=localhost;dbname=db_bank', 'root', '');
 
 function checkLogin($username, $password, $loginAs){
 	global $dbc;
