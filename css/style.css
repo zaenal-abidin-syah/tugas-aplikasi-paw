@@ -126,3 +126,7 @@ textarea {
 button[type=submit]{
 	padding: 5px 10px;
 }
+
+.warning{
+	color: red;
+}

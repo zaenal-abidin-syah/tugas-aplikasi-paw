@@ -69,29 +69,43 @@ include '../include/nav_customer.php';
 		type="text"
 		name="username" 
 		id="username"
-		value="<?php echo isset($data['username']) ? $data['username'] : ''; ?>"><br><br>
+		value="<?php echo isset($data['username']) ? $data['username'] : ''; ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['usernameError'] : '' ?>
+	</p>
 	<label for="nama">Nama</label>
 	<input 
 		type="text"
 		name="nama" 
 		id="nama"
-		value="<?php echo isset($data['nama']) ? $data['nama'] : ''; ?>"><br><br>
+		value="<?php echo isset($data['nama']) ? $data['nama'] : ''; ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['nameError'] : '' ?>
+	</p>
 	<label for="email">email</label>
 	<input 
 		type="text"
 		name="email" 
 		id="email"
-		value="<?php echo isset($data['email']) ? $data['email'] : ''; ?>"><br><br>
+		value="<?php echo isset($data['email']) ? $data['email'] : ''; ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['emailError'] : '' ?>
+	</p>
 	<label for="no_tlp">No. Telephone</label>
 	<input 
 		type="text"
 		name="no_tlp" 
 		id="no_tlp"
-		value="<?php echo isset($data['no_tlp']) ? $data['no_tlp'] : ''; ?>"><br><br>
+		value="<?php echo isset($data['no_tlp']) ? $data['no_tlp'] : ''; ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['no_tlpError'] : '' ?>
+	</p>
 	<label for="alamat">alamat</label>
 	<textarea 
 		name="alamat" id="alamat"><?php echo isset($data['alamat']) ? $data['alamat'] : ''; ?></textarea>
-	<br><br>
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['alamatError'] : '' ?>
+	</p>
 	<button type="submit" name="submit">Submit</button>
 </form>
 <?php include '../include/footer.php'; ?>

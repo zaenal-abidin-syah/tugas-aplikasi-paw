@@ -6,6 +6,7 @@ $title = 'login';
 $style = 'css/style.css';
 // include function
 include 'functions.php';
+$error  = '';
 
 
 
@@ -34,13 +35,17 @@ if (isset($_POST['login'])){
 			exit();
 		}
 		
+	}else{
+		$error = 'username atau password salah';
 	}
 }
 include 'include/header.php';
 include 'include/nav_pengunjung.php';
 
 ?>
-
+	<div class="tombol">
+		<p class="warning"><?php echo isset($_POST['login']) ? $error : '' ?></p>
+	</div>
 	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 		<input type="hidden" name="loginAs" value="<?php echo $loginAs ?>"><br><br>
 		<label for="username">username</label>

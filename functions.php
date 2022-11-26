@@ -350,11 +350,11 @@ function cekSaldo($data)
 {
 	// validasi kosong
 	if (empty($data)){
-		return "rekening tidak boleh kosong!";
+		return "saldo tidak boleh kosong!";
 	}
 	// validasi regex
 	if(!preg_match("/^[0-9]+$/", $data)){
-		return "rekening tidak Valid, Hanya boleh berupa karakter numerik";
+		return "saldo tidak Valid, Hanya boleh berupa karakter numerik";
 	}
 	// validasi panjang karakter
 	if($data < 50000){
@@ -411,9 +411,6 @@ function insertRekening($username, $rekening, $saldo)
 }
 
 
-function register($username, $password){
-	// mendaftarkan akun customer
-}
 
 function tampilSaldo($no_rekening)
 {

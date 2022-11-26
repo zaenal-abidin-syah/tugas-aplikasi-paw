@@ -69,48 +69,71 @@ include '../include/nav_admin.php';
 		type="text"
 		name="username" 
 		id="username"
-		value="<?php echo isset($_POST['username']) ? $_POST['username'] : '' ?>"><br><br>
+		value="<?php echo isset($_POST['username']) ? $_POST['username'] : '' ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['usernameError'] : '' ?>
+	</p>
 	<label for="password">password</label>
 	<input 
 		type="text"
 		name="password" 
 		id="password"
-		value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>"><br><br>
+		value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['passwordError'] : '' ?>
+	</p>
 	<label for="rekening">rekening</label>
 	<input 
 		type="text"
 		name="rekening" 
 		id="rekening"
-		value="<?php echo isset($_POST['rekening']) ? $_POST['rekening'] : '' ?>"><br><br>
+		value="<?php echo isset($_POST['rekening']) ? $_POST['rekening'] : '' ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['rekeningError'] : '' ?>
+	</p>
 
 	<label for="saldo">saldo</label>
 	<input 
 		type="text"
 		name="saldo" 
 		id="saldo"
-		value="<?php echo isset($_POST['saldo']) ? $_POST['saldo'] : '' ?>"><br><br>
+		value="<?php echo isset($_POST['saldo']) ? $_POST['saldo'] : '' ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['saldoError'] : '' ?>
+	</p>
 	<label for="nama">Nama</label>
 	<input 
 		type="text"
 		name="nama" 
 		id="nama"
-		value="<?php echo isset($_POST['nama']) ? $_POST['nama'] : '' ?>"><br><br>
+		value="<?php echo isset($_POST['nama']) ? $_POST['nama'] : '' ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['nameError'] : '' ?>
+	</p>
 	<label for="email">email</label>
 	<input 
 		type="text"
 		name="email" 
 		id="email"
-		value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"><br><br>
+		value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['emailError'] : '' ?>
+	</p>
 	<label for="no_tlp">No. Telephone</label>
 	<input 
 		type="text"
 		name="no_tlp" 
 		id="no_tlp"
-		value="<?php echo isset($_POST['no_tlp']) ? $_POST['no_tlp'] : '' ?>"><br><br>
+		value="<?php echo isset($_POST['no_tlp']) ? $_POST['no_tlp'] : '' ?>">
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['no_tlpError'] : '' ?>
+	</p>
 	<label for="alamat">alamat</label>
 	<textarea 
 		name="alamat" id="alamat"><?php echo isset($_POST['alamat']) ? $_POST['alamat'] : '' ?></textarea>
-	<br><br>
+	<p class="warning">
+		<?php echo isset($_POST['submit']) ? $errors['alamatError'] : '' ?>
+	</p>
 	<button type="submit" name="submit">Submit</button>
 </form>
 <?php include '../include/footer.php'; ?>

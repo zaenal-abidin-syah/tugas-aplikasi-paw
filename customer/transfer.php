@@ -8,16 +8,19 @@ if (!isset($_SESSION['customer'])){
 }
 $style = '../css/style.css';
 $title = 'transfer';
+$error = "";
 
 if (isset($_POST['submit'])){
 	$rekeningPengirim = check_input($_POST['rekening_pengirim']);
 	$rekeningPenerima = check_input($_POST['rekening_penerima']);
 	$jumlahTransaksi = check_input($_POST['jumlah_transaksi']);
 	$tf = transfer($rekeningPengirim, $rekeningPenerima, $jumlahTransaksi);
-	if(!$tf){
-		echo "transaksi gagal";
+	$username = tampiluser($rekeningPengirim)[0]['username'];
+	if($tf){
+		header("Location: index.php?username=$username");
+		exit();
 	}else{
-		echo $tf;
+		$error = 'transaksi gagal';
 	}
 }
 
@@ -25,7 +28,9 @@ if (isset($_POST['submit'])){
 include '../include/header.php';
 include '../include/nav_customer.php'; 
 ?>
-
+<div class="tombol">
+		<p class="warning"><?php echo isset($tf) ? $error : ''  ?></p>
+	</div>
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 	<input 
 		type="hidden"
