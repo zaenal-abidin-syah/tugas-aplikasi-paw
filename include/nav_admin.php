@@ -1,6 +1,6 @@
 <!-- nav header admin -->	
 <nav class="nav">
-	<div class="header">Banking</div>
+	<div class="header">UTM-Banking</div>
 	<div class="nav-bar">
 		<a class="nav-link" href="browse.php">Browse</a>
 		<a class="nav-link" href="register.php">Register</a>

@@ -6,7 +6,7 @@ if (!isset($_SESSION['admin'])){
     exit();
 }
 $title = 'Home';
-$style = '../css/style5.css';
+$style = '../css/style.css';
 include '../include/header.php';
 include '../include/nav_admin.php';
  ?>

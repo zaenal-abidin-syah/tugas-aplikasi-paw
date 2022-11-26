@@ -12,7 +12,7 @@ if (isset($_GET['username'])){
 
 include '../functions.php';
 $title = 'daftar rekening';
-$style = '../css/style5.css';
+$style = '../css/style.css';
 $no_rekening = tampilRekening($username);
 include '../include/header.php';
 include '../include/nav_customer.php'; 

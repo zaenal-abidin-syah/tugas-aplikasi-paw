@@ -6,7 +6,7 @@ if (!isset($_SESSION['customer'])){
 	header('Location: ../index.php');
 	exit();
 }
-$style = '../css/style5.css';
+$style = '../css/style.css';
 $title = 'transfer';
 
 if (isset($_POST['submit'])){

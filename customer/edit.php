@@ -2,7 +2,7 @@
 session_start();
 ob_start();
 $title = 'edit';
-$style = '../css/style5.css';
+$style = '../css/style.css';
 include '../functions.php'; 
 if (!isset($_SESSION['customer'])){
 	header('Location: ../index.php');

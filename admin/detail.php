@@ -6,7 +6,7 @@ if (!isset($_SESSION['admin'])){
 	exit();
 }
 $title = 'detail';
-$style = '../css/style5.css';
+$style = '../css/style.css';
 include '../functions.php';
 $data = tampilDetail($_GET['username']);
 $no_rekening = tampilRekening($_GET['username']);

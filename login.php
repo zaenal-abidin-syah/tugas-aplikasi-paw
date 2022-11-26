@@ -3,7 +3,7 @@
 session_start();
 ob_start();
 $title = 'login';
-$style = 'css/style5.css';
+$style = 'css/style.css';
 // include function
 include 'functions.php';
 
@@ -41,7 +41,6 @@ include 'include/nav_pengunjung.php';
 
 ?>
 
-	<h1>Ini adalah halaman login</h1>
 	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 		<input type="hidden" name="loginAs" value="<?php echo $loginAs ?>"><br><br>
 		<label for="username">username</label>

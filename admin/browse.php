@@ -1,7 +1,7 @@
 <?php 
 session_start();
 $title = 'browse';
-$style = '../css/style5.css';
+$style = '../css/style.css';
 if (!isset($_SESSION['admin'])){
 	header('Location:index.php');
 	exit();
