@@ -4,7 +4,7 @@ ob_start();
 $title = 'edit';
 $style = '../css/style5.css';
 include '../functions.php'; 
-if (!isset($_SESSION['admin'])){
+if (!isset($_SESSION['customer'])){
 	header('Location: ../index.php');
 	exit();
 }
@@ -50,17 +50,17 @@ if (isset($_POST['submit'])){
     	if ($usernameLama == $username){
     		updateUsername($usernameLama, $username);
     	}
-    	header('Location: index.php');
+    	header("Location: index.php?username=$username");
     	exit();
     }
 	
 }
 if (isset($_GET['username'])){
 	$data = select($_GET['username'])[0];
-}
 
+}
 include '../include/header.php';
-include '../include/nav_admin.php';
+include '../include/nav_customer.php';
 ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 	<input type="hidden" name="usernameLama" value="<?php echo isset($data['username']) ? $data['username'] : ''; ?>">

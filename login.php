@@ -3,10 +3,11 @@
 session_start();
 ob_start();
 $title = 'login';
-$style = 'css/style1.css';
-
+$style = 'css/style5.css';
 // include function
 include 'functions.php';
+
+
 
 if (!isset($_GET['loginAs']) AND !isset($_POST['login'])){
 	header("Location: index.php");
@@ -21,11 +22,18 @@ if (isset($_POST['login'])){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$loginAs = $_POST['loginAs'];
+	
 	// check apakah sama dengan data yang ada di database
 	if(checkLogin($username, $password, $loginAs)){
 		$_SESSION[$loginAs] = true;
-		header("Location: $loginAs/index.php");
-		exit();
+		if ($loginAs == 'customer'){
+			header("Location: customer/index.php?username=$username");
+			exit();
+		}else {
+			header("Location: admin/index.php");
+			exit();
+		}
+		
 	}
 }
 include 'include/header.php';

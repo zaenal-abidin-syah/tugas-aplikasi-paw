@@ -1,7 +1,7 @@
 <?php 
-$title = 'Home';
-$style = 'css/style1.css';
 session_start(); 
+$title = 'Home';
+$style = 'css/style5.css';
 include 'include/header.php';
 include 'include/nav_pengunjung.php';
 

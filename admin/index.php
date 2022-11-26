@@ -1,7 +1,12 @@
 <?php 
-$title = 'Home';
 session_start(); 
-$style = '../css/style1.css';
+ob_start();
+if (!isset($_SESSION['admin'])){
+    header('Location: ../index.php');
+    exit();
+}
+$title = 'Home';
+$style = '../css/style5.css';
 include '../include/header.php';
 include '../include/nav_admin.php';
  ?>
