@@ -453,15 +453,28 @@ function updateRekeningPenerima($rekeningPenerima, $jumlahTransaksi){
 	$statement->execute();
 }
 
+function insertTransaksi($rekeningPengirim, $rekeningPenerima, $jumlahTransaksi){
+	global $dbc;
+	$statement = $dbc->prepare("
+		INSERT INTO transaksi (rekening_pengirim, rekening_penerima, jumlah_transaksi) 
+		VALUES (:rekening_pengirim, :rekening_penerima, :jumlah_transaksi)
+		");
+	$statement->bindValue(':rekening_pengirim',$rekeningPengirim);
+	$statement->bindValue(':rekening_penerima',$rekeningPenerima);
+	$statement->bindValue(':jumlah_transaksi',$jumlahTransaksi);
+	$statement->execute();
+}
+
 function transfer($rekeningPengirim, $rekeningPenerima, $jumlahTransaksi)
 {
 	// cek jumlah saldo
-	$saldo = tampilSaldo($rekeningPengirim);
+	$saldo = tampilSaldo($rekeningPengirim)[0]['saldo'];
 	if ($saldo < $jumlahTransaksi){
 		return false;
 	}
 	updateRekeningPengirim($rekeningPengirim, $jumlahTransaksi);
 	updateRekeningPenerima($rekeningPenerima, $jumlahTransaksi);
+	insertTransaksi($rekeningPengirim, $rekeningPenerima, $jumlahTransaksi);
 	return 'transaksi berhasil';
 }
 
